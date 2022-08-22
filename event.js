@@ -3,13 +3,12 @@ function displayPlayer() {
     const orderList = document.getElementById('players');
     orderList.innerHTML = '';
 
-
     for (let i = 0; i < playerArray.length; i++) {
 
         if (playerArray.length > 5) {
 
             alert("you can not add player more than five");
-
+            document.getElementById('Total-Player').innerText = ' '
             return;
 
         }
