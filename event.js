@@ -4,28 +4,31 @@ function displayPlayer() {
     orderList.innerHTML = '';
 
 
-    for (i = 0; i < playerArray.length; i++) {
+    for (let i = 0; i < playerArray.length; i++) {
 
         if (playerArray.length > 5) {
+
             alert("you can not add player more than five");
 
             return;
 
         }
 
-        const name = playerArray[i].pName;
-        const li = document.createElement('li')
-        li.innerHTML = ` 
+        else {
+
+            const name = playerArray[i].pName;
+            const li = document.createElement('li')
+            li.innerHTML = ` 
                  
                 <li>${[i + 1]}.  ${name}</li>
                
                `
-        orderList.appendChild(li);
+            orderList.appendChild(li);
+        }
     }
 
-
-
 }
+
 
 function addplayer(player) {
 
@@ -34,12 +37,7 @@ function addplayer(player) {
         pName: playerName
 
     }
-    const btn = document.querySelectorAll('button');
-    for (let btns of btn) {
-        btns.addEventListener('click', function (event) {
-            event.target.setAttribute('disabled', true);
-        })
-    }
+
     playerArray.push(playerObj);
 
 
@@ -47,9 +45,8 @@ function addplayer(player) {
 
     displayPlayer(playerArray);
 
-
-
 }
+
 
 
 
