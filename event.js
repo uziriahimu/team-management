@@ -18,18 +18,13 @@ function displayPlayer() {
         orderList.appendChild(li);
 
 
-
-
-
-
-
     }
-
-
 }
 
 function addplayer(player) {
     const playerName = player.parentNode.parentNode.children[0].innerText;
+
+
     const playerObj = {
         pName: playerName
 
@@ -39,8 +34,8 @@ function addplayer(player) {
     document.getElementById('Total-Player').innerText = playerArray.length;
 
     displayPlayer(playerArray);
-}
 
+}
 // ------------ Buget--------- 
 function inputField(inputId) {
     const pInputField = document.getElementById(inputId);
