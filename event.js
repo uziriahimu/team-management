@@ -40,16 +40,45 @@ function setelementValue(elementId, value) {
     const element = document.getElementById(elementId);
     element.innerText = value;
 
-
-
 }
-document.getElementById('calc-btn').addEventListener('click', function () {
-    const playerIncome = inputField('per-player-field');
+function playerexpence() {
+    const playerCost = inputField('per-player-field');
 
     // ----- total player income----- 
     const playerlength = document.getElementById('Total-Player').innerText;
 
-    const playerMoney = playerIncome * playerlength
-    setelementValue('player-expence', playerMoney);
-    console.log(playerMoney)
+    const playerExpence = playerCost * playerlength
+    setelementValue('player-expence', playerExpence);
+    return playerExpence;
+
+}
+document.getElementById('calc-btn').addEventListener('click', function () {
+    // const playerCost = inputField('per-player-field');
+
+    // // ----- total player income----- 
+    // const playerlength = document.getElementById('Total-Player').innerText;
+
+    // const playerExpence = playerCost * playerlength
+    // setelementValue('player-expence', playerExpence);
+
+    playerexpence()
+})
+document.getElementById('calc-total-btn').addEventListener('click', function () {
+    // total cost 
+    // const playerCost = inputField('per-player-field');
+
+    // // ----- total player income----- 
+    // const playerlength = document.getElementById('Total-Player').innerText;
+
+    // const playerExpence = playerCost * playerlength
+    // setelementValue('player-expence', playerExpence);
+    const playerExpence = playerexpence();
+
+    //-------- total cost -----------
+
+    const managerCost = inputField('manager-field');
+    const coachCost = inputField('coach-field');
+    const totalExpence = playerExpence + managerCost + coachCost;
+    setelementValue('total-expense', totalExpence);
+
 })
