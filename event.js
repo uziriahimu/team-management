@@ -2,40 +2,57 @@ let playerArray = [];
 function displayPlayer() {
     const orderList = document.getElementById('players');
     orderList.innerHTML = '';
+
+
     for (i = 0; i < playerArray.length; i++) {
 
         if (playerArray.length > 5) {
             alert("you can not add player more than five");
+
             return;
 
         }
+
         const name = playerArray[i].pName;
         const li = document.createElement('li')
         li.innerHTML = ` 
-             
-            <li>${[i + 1]}.  ${name}</li>
-           `
+                 
+                <li>${[i + 1]}.  ${name}</li>
+               
+               `
         orderList.appendChild(li);
-
-
     }
+
+
+
 }
 
 function addplayer(player) {
+
     const playerName = player.parentNode.parentNode.children[0].innerText;
-
-
     const playerObj = {
         pName: playerName
 
     }
+    const btn = document.querySelectorAll('button');
+    for (let btns of btn) {
+        btns.addEventListener('click', function (event) {
+            event.target.setAttribute('disabled', true);
+        })
+    }
     playerArray.push(playerObj);
+
 
     document.getElementById('Total-Player').innerText = playerArray.length;
 
     displayPlayer(playerArray);
 
+
+
 }
+
+
+
 // ------------ Buget--------- 
 function inputField(inputId) {
     const pInputField = document.getElementById(inputId);
