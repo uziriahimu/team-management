@@ -49,7 +49,7 @@ function addplayer(player) {
 
 
 
-// ------------ Buget--------- 
+
 function inputField(inputId) {
     const pInputField = document.getElementById(inputId);
     const pInputFieldString = pInputField.value;
@@ -59,11 +59,14 @@ function inputField(inputId) {
     return inputField;
 }
 
+
 function setelementValue(elementId, value) {
     const element = document.getElementById(elementId);
     element.innerText = value;
 
 }
+
+
 function playerexpence() {
     const playerCost = inputField('per-player-field');
 
@@ -75,6 +78,8 @@ function playerexpence() {
     return playerExpence;
 
 }
+
+
 document.getElementById('calc-btn').addEventListener('click', function () {
     playerexpence();
 });
