@@ -3,14 +3,29 @@ function displayPlayer() {
     const orderList = document.getElementById('players');
     orderList.innerHTML = '';
     for (i = 0; i < playerArray.length; i++) {
+
+        if (playerArray.length > 5) {
+            alert("you can not add player more than five");
+            return;
+
+        }
         const name = playerArray[i].pName;
         const li = document.createElement('li')
         li.innerHTML = ` 
-         
-        <li>${[i + 1]}.  ${name}</li>
-       `
+             
+            <li>${[i + 1]}.  ${name}</li>
+           `
         orderList.appendChild(li);
+
+
+
+
+
+
+
     }
+
+
 }
 
 function addplayer(player) {
@@ -53,25 +68,10 @@ function playerexpence() {
 
 }
 document.getElementById('calc-btn').addEventListener('click', function () {
-    // const playerCost = inputField('per-player-field');
+    playerexpence();
+});
 
-    // // ----- total player income----- 
-    // const playerlength = document.getElementById('Total-Player').innerText;
-
-    // const playerExpence = playerCost * playerlength
-    // setelementValue('player-expence', playerExpence);
-
-    playerexpence()
-})
 document.getElementById('calc-total-btn').addEventListener('click', function () {
-    // total cost 
-    // const playerCost = inputField('per-player-field');
-
-    // // ----- total player income----- 
-    // const playerlength = document.getElementById('Total-Player').innerText;
-
-    // const playerExpence = playerCost * playerlength
-    // setelementValue('player-expence', playerExpence);
     const playerExpence = playerexpence();
 
     //-------- total cost -----------
@@ -81,4 +81,4 @@ document.getElementById('calc-total-btn').addEventListener('click', function () 
     const totalExpence = playerExpence + managerCost + coachCost;
     setelementValue('total-expense', totalExpence);
 
-})
+});
