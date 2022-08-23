@@ -64,7 +64,7 @@ function setelementValue(elementId, value) {
 }
 
 
-function playerExpense() {
+function playerexpense() {
     const playerCost = inputField('per-player-field');
 
     // ----- total player income----- 
@@ -78,11 +78,12 @@ function playerExpense() {
 
 
 document.getElementById('calc-btn').addEventListener('click', function () {
-    playerExpense();
+    playerexpense()
 });
 
+
 document.getElementById('calc-total-btn').addEventListener('click', function () {
-    const playerExpense = playerExpense();
+    const playerExpense = playerexpense();
 
     //-------- total cost -----------
 
