@@ -47,9 +47,6 @@ function addplayer(player) {
 }
 
 
-
-
-
 function inputField(inputId) {
     const pInputField = document.getElementById(inputId);
     const pInputFieldString = pInputField.value;
@@ -67,31 +64,31 @@ function setelementValue(elementId, value) {
 }
 
 
-function playerexpence() {
+function playerExpense() {
     const playerCost = inputField('per-player-field');
 
     // ----- total player income----- 
     const playerlength = document.getElementById('Total-Player').innerText;
 
-    const playerExpence = playerCost * playerlength
-    setelementValue('player-expence', playerExpence);
-    return playerExpence;
+    const playerExpense = playerCost * playerlength
+    setelementValue('player-expence', playerExpense);
+    return playerExpense;
 
 }
 
 
 document.getElementById('calc-btn').addEventListener('click', function () {
-    playerexpence();
+    playerExpense();
 });
 
 document.getElementById('calc-total-btn').addEventListener('click', function () {
-    const playerExpence = playerexpence();
+    const playerExpense = playerExpense();
 
     //-------- total cost -----------
 
     const managerCost = inputField('manager-field');
     const coachCost = inputField('coach-field');
-    const totalExpence = playerExpence + managerCost + coachCost;
-    setelementValue('total-expense', totalExpence);
+    const totalExpense = playerExpense + managerCost + coachCost;
+    setelementValue('total-expense', totalExpense);
 
 });
