@@ -38,7 +38,7 @@ function addplayer(player) {
     }
 
     playerArray.push(playerObj);
-
+    player.style.backgroundColor = "gray"
 
     document.getElementById('Total-Player').innerText = playerArray.length;
 
